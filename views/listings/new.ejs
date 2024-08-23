@@ -1,0 +1,79 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<div class="row mt-2 offset-2">
+    <h3>Create A New Listing</h3>
+    <div class="col-8">
+        <form method="post" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input name="listing[title]" type="text" id="title" placeholder="Enter Title" class="form-control box-shadow" required>
+                <div class="valid-feedback">
+                    title looks good
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="Description" class="form-label">Description</label>
+                <textarea name="listing[description]" type="text" id="Description" placeholder="Enter description" class="form-control box-shadow" required></textarea>
+                <div class="invalid-feedback">
+                    Please Enter Description
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="imageupload" class="form-label">Upload Listing Image</label>
+                <input name="listing[image]" type="file" id="imageupload" placeholder="Enter image URL" class="form-control box-shadow" required>
+                <div class="invalid-feedback">
+                    Try to Enter You Own House Property
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="category" class="form-label" aria-label="Default select example" >Category</label>
+                <select name="listing[category]" id="category" class="form-select box-shadow">
+                    <option value="Rooms" selected>Rooms</option>
+                    <option value="Amazing View">Amazing View</option>
+                    <option value="Swimming">Swimming</option>
+                    <option value="Ships">Ships</option>
+                    <option value="Tent">Tent</option>
+                    <option value="BreakFasts">BreakFasts</option>
+                    <option value="Mountain">Mountain</option>
+                    <option value="Camper Vans">Camper Vans</option>
+                    <option value="Farm">Farm</option>
+                    <option value="Arctic">Arctic</option>
+                    <option value="Ghost">Ghost</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <div class="mb-3 col-md-4">
+                    <label for="Price" class="form-label">Enter Price</label>
+                    <input name="listing[price]" id="Price" type="text" placeholder="Enter price" class="form-control box-shadow" required>
+                    <div class="invalid-feedback">
+                        Please Enter Price
+                    </div>
+                </div>
+                
+                <div class="mb-3 col-md-8">
+                    <label for="Country" class="form-label">Country</label>
+                    <input name="listing[country]" id="Country" type="text" placeholder="Enter country name" class="form-control box-shadow" required>
+                    <div class="invalid-feedback">
+                        Enter Valid Country
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="Location" class="form-label">Location</label>
+                <input name="listing[location]" id="Location" type="text" placeholder="Enter location" class="form-control box-shadow" required>
+                <div class="invalid-feedback">
+                    Please Enter Valid Location
+                </div>
+            </div>
+        
+            <div class="col-auto " >
+                <button type="submit" class="btn mb-3 box-shadow new-form-btn">Add</button>
+            </div>
+        </form>
+    </div>
+</div>
